@@ -54,6 +54,13 @@ const articles = [
 ];
 
 export default function Home() {
+  const scrollToArticles = () => {
+    document.getElementById('articles-section')?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-card py-20 animate-fade-in">
@@ -72,7 +79,7 @@ export default function Home() {
               От базовых концепций до продвинутых техник.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
+              <Button size="lg" className="group" onClick={scrollToArticles}>
                 Читать статьи
                 <Icon name="ArrowRight" size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -85,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container py-12">
+      <section id="articles-section" className="container py-12">
         <div className="mb-8">
           <h2 className="text-3xl font-bold mb-2">Последние статьи</h2>
           <p className="text-muted-foreground">
