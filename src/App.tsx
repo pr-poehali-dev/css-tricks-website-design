@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
+import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/contacts" component={Contacts} />
+            <Route path="/article/:id" component={Article} />
             <Route component={NotFound} />
           </Switch>
         </main>
