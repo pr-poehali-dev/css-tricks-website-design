@@ -8,10 +8,10 @@ export default function Contacts() {
       <section className="bg-gradient-to-b from-background to-card py-16 animate-fade-in">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent px-4 sm:px-0">
               Свяжитесь с нами
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg sm:text-xl text-muted-foreground px-4 sm:px-0">
               Мы всегда рады вашим вопросам и предложениям
             </p>
           </div>

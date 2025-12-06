@@ -97,11 +97,11 @@ export default function Article() {
             </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
             {article.title}
           </h1>
 
-          <p className="text-xl text-muted-foreground mb-6">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-6">
             {article.description}
           </p>
 
@@ -176,7 +176,7 @@ export default function Article() {
 
         <Separator className="my-12" />
 
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
               <Icon name="User" size={20} className="text-primary" />
@@ -187,14 +187,14 @@ export default function Article() {
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm">
+          <div className="flex gap-2 w-full sm:w-auto">
+            <Button variant="outline" size="sm" className="flex-1 sm:flex-none">
               <Icon name="Share2" size={16} className="mr-2" />
-              Поделиться
+              <span className="hidden xs:inline">Поделиться</span>
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" className="flex-1 sm:flex-none">
               <Icon name="Bookmark" size={16} className="mr-2" />
-              Сохранить
+              <span className="hidden xs:inline">Сохранить</span>
             </Button>
           </div>
         </div>

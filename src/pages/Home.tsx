@@ -71,10 +71,10 @@ export default function Home() {
               <Icon name="Sparkles" size={16} className="mr-2 text-primary" />
               <span className="text-primary font-medium">Новые статьи каждую неделю</span>
             </div>
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4 sm:mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
               CSS Tricks
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-4 sm:px-0">
               Современный блог о CSS трюках, туториалах и лучших практиках веб-разработки.
               От базовых концепций до продвинутых техник.
             </p>

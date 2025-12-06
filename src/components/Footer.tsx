@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="text-sm font-semibold">CSS Tricks</span>
           </div>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground text-center md:text-left">
             © {currentYear} CSS Tricks. Все статьи и туториалы для веб-разработчиков
           </p>
 
