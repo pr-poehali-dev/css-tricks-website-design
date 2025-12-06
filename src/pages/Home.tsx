@@ -60,6 +60,86 @@ const articles = [
     date: '25 октября 2024',
     tags: ['Performance', 'Optimization', 'Production'],
     readTime: '9 мин'
+  },
+  {
+    id: '7',
+    title: 'CSS Container Queries: Новая эра адаптивности',
+    description: 'Познакомьтесь с революционной технологией Container Queries, которая меняет подход к созданию адаптивных компонентов.',
+    date: '20 октября 2024',
+    tags: ['Container Queries', 'Responsive', 'Modern CSS'],
+    readTime: '7 мин'
+  },
+  {
+    id: '8',
+    title: 'Создание кастомных форм с CSS',
+    description: 'Научитесь стилизовать формы и элементы управления. Кастомные чекбоксы, радио-кнопки и селекты без JavaScript.',
+    date: '15 октября 2024',
+    tags: ['Forms', 'UI', 'Styling'],
+    readTime: '8 мин'
+  },
+  {
+    id: '9',
+    title: 'CSS Filters и Blend Modes',
+    description: 'Создавайте потрясающие визуальные эффекты с помощью CSS фильтров и режимов наложения. Практические примеры использования.',
+    date: '10 октября 2024',
+    tags: ['Filters', 'Effects', 'Visual'],
+    readTime: '6 мин'
+  },
+  {
+    id: '10',
+    title: 'Темная тема на CSS переменных',
+    description: 'Пошаговое руководство по созданию переключаемой темной темы с использованием CSS Custom Properties и JavaScript.',
+    date: '5 октября 2024',
+    tags: ['Dark Mode', 'Theming', 'JavaScript'],
+    readTime: '9 мин'
+  },
+  {
+    id: '11',
+    title: 'Масштабирование текста: clamp(), min(), max()',
+    description: 'Изучите современные CSS функции для создания идеально масштабируемых типографических систем на всех устройствах.',
+    date: '1 октября 2024',
+    tags: ['Typography', 'Functions', 'Responsive'],
+    readTime: '5 мин'
+  },
+  {
+    id: '12',
+    title: 'CSS-in-JS: Плюсы и минусы',
+    description: 'Обзор популярных подходов к стилизации в JavaScript: styled-components, Emotion, CSS Modules и их сравнение.',
+    date: '28 сентября 2024',
+    tags: ['CSS-in-JS', 'JavaScript', 'Architecture'],
+    readTime: '10 мин'
+  },
+  {
+    id: '13',
+    title: 'Aspect Ratio и современные трюки',
+    description: 'Как правильно работать с пропорциями элементов в современном CSS. От классических хаков до свойства aspect-ratio.',
+    date: '25 сентября 2024',
+    tags: ['Aspect Ratio', 'Layout', 'Tricks'],
+    readTime: '6 мин'
+  },
+  {
+    id: '14',
+    title: 'Градиенты в CSS: Полный гайд',
+    description: 'Все о линейных, радиальных и конических градиентах. Создание сложных фонов и паттернов с помощью градиентов.',
+    date: '20 сентября 2024',
+    tags: ['Gradients', 'Background', 'Design'],
+    readTime: '8 мин'
+  },
+  {
+    id: '15',
+    title: 'Scroll-Driven Animations',
+    description: 'Новый способ создания анимаций, управляемых прокруткой страницы. Parallax эффекты без JavaScript.',
+    date: '15 сентября 2024',
+    tags: ['Animations', 'Scroll', 'Modern CSS'],
+    readTime: '7 мин'
+  },
+  {
+    id: '16',
+    title: 'CSS Subgrid: Вложенные сетки',
+    description: 'Углубленное изучение Subgrid — мощного инструмента для создания согласованных многоуровневых макетов в CSS Grid.',
+    date: '10 сентября 2024',
+    tags: ['Subgrid', 'CSS Grid', 'Layout'],
+    readTime: '9 мин'
   }
 ];
 
