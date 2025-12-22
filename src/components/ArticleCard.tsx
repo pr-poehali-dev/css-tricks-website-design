@@ -19,8 +19,8 @@ export default function ArticleCard({ id, title, description, date, tags, readTi
         <Card className="h-full transition-all duration-300 hover-lift hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20">
           <CardHeader>
             <div className="flex items-center gap-1 text-xs text-muted-foreground mb-2">
-              <Icon name="Clock" size={14} />
-              <span>{readTime}</span>
+              <Icon name="Calendar" size={14} />
+              <span>{date}</span>
             </div>
             <CardTitle className="text-xl font-semibold leading-tight hover:text-primary transition-colors">
               {title}
