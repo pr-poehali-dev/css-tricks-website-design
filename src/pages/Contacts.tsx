@@ -1,8 +1,62 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
+import { useState } from 'react';
 
 export default function Contacts() {
+  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !message) {
+      toast({
+        title: "Ошибка",
+        description: "Пожалуйста, заполните все поля",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, message })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Сообщение отправлено!",
+          description: "Мы свяжемся с вами в ближайшее время",
+        });
+        setEmail('');
+        setMessage('');
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка отправки",
+        description: "Попробуйте еще раз позже",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-b from-background to-card py-16 animate-fade-in">
@@ -20,6 +74,50 @@ export default function Contacts() {
 
       <section className="container py-12">
         <div className="mx-auto max-w-2xl">
+          <Card className="mb-8 border-primary/20 bg-gradient-to-br from-card to-primary/5">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20">
+                  <Icon name="Send" size={20} className="text-primary" />
+                </div>
+                Отправить сообщение
+              </CardTitle>
+              <CardDescription>
+                Заполните форму ниже, и мы свяжемся с вами в ближайшее время
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Электронная почта</Label>
+                  <Input 
+                    id="email"
+                    type="email" 
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message">Сообщение</Label>
+                  <Textarea 
+                    id="message"
+                    placeholder="Напишите ваше сообщение..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    rows={6}
+                    required
+                  />
+                </div>
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <Icon name="Send" size={18} className="mr-2" />
+                  {isSubmitting ? 'Отправка...' : 'Отправить'}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+          
           <div className="grid gap-6 mb-8">
             <Card className="hover-lift transition-all duration-300 hover:border-primary/50">
               <CardHeader>
