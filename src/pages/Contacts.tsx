@@ -9,6 +9,7 @@ import { useState } from 'react';
 
 export default function Contacts() {
   const { toast } = useToast();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,7 +17,7 @@ export default function Contacts() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email || !message) {
+    if (!name || !email || !message) {
       toast({
         title: "Ошибка",
         description: "Пожалуйста, заполните все поля",
@@ -33,7 +34,7 @@ export default function Contacts() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, message })
+        body: JSON.stringify({ name, email, message })
       });
 
       if (response.ok) {
@@ -41,6 +42,7 @@ export default function Contacts() {
           title: "Сообщение отправлено!",
           description: "Мы свяжемся с вами в ближайшее время",
         });
+        setName('');
         setEmail('');
         setMessage('');
       } else {
@@ -88,6 +90,17 @@ export default function Contacts() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Имя</Label>
+                  <Input 
+                    id="name"
+                    type="text" 
+                    placeholder="Ваше имя"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Электронная почта</Label>
                   <Input 
